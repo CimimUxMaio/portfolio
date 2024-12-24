@@ -1,0 +1,18 @@
+{
+  "linkedInUrl": "https://www.linkedin.com/in/jbabdon",
+  "gitHubUrl": "https://www.github.com/CimimUxMaio",
+  "email": "juanbiabdon@gmail.com",
+
+  "aboutMe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+  "profilePicUrl": "https://www.your-profile-pic-url.com",
+
+  "projects": [
+    {
+      "title": "Bebot",
+      "summary": "Discord bot that plays music.",
+      "technologies": ["python", "discord.py", "asyncio"],
+      "repo": "https://www.github.com/CimimUxMaio/bebot2.0",
+      "image": "/static/placeholder.png"
+    }
+  ]
+}
