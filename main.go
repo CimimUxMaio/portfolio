@@ -73,7 +73,7 @@ func command(command string, infoUrl string, onExec string) gin.HandlerFunc {
 
 func commandInfo(command string, infoUrl string, onExec string) gin.H {
 	typingSteps := len(command)
-	var charPerSec float32 = 10
+	var charPerSec float32 = 12
 	typingDur := float32(typingSteps) / charPerSec
 	return gin.H{"command": command, "typingDur": typingDur, "typingSteps": typingSteps, "infoUrl": infoUrl, "onExec": onExec}
 }
