@@ -17,8 +17,6 @@ func main() {
 	r.Static("/static", "./static")
 	r.StaticFile("/favicon.ico", "./static/favicon.ico")
 
-	// r.LoadHTMLGlob("templates/*.html")
-
 	r.GET("/", func(c *gin.Context) {
 		renderComponent(c, templates.Index())
 	})
@@ -43,7 +41,7 @@ func main() {
 
 	commands.GET("/clear", command("clear", "", "clearContent();"))
 
-	error := r.Run()
+	error := r.Run("192.168.0.38:8001")
 	if error != nil {
 		panic(error)
 	}

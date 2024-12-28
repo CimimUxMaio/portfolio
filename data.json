@@ -12,7 +12,7 @@
   "projects": [
     {
       "title": "Bebot",
-      "description": "Discord bot that plays music.",
+      "description": "This is a music-playing bot I use with my friends on Discord.\nThis project has gone through multiple iterations, and I am still frequently updating it and exploring new features.\nIt interacts with Discord's API through the discord.py Python library and uses yt-dlp for searching and downloading audio tracks.",
       "technologies": ["Python", "Discord.py", "Asyncio"],
       "repository": "https://www.github.com/CimimUxMaio/bebot2.0",
       "image": "/static/placeholder.png"
@@ -20,25 +20,17 @@
 
     {
       "title": "Portfolio",
-      "description": "This website.",
-      "technologies": ["Go", "Gin", "Tailwindcss", "HTML", "HTMX"],
+      "description": "This website.\nIt is a simple and clean portfolio to showcase my projects.\nFor its development, I use Go together with the Gin framework for the backend, Tailwind CSS for the styling, HTMX for loading dynamic content, and Templ as the templating language.",
+      "technologies": ["Go", "Gin", "TailwindCSS", "HTMX", "Templ"],
       "repository": "https://www.github.com/CimimUxMaio/portfolio",
       "image": "/static/placeholder.png"
     },
 
     {
       "title": "GeoQuest",
-      "description": "AI treasure hunting game.",
-      "technologies": ["ReactNative", "Expo", "Go", "MongoDB", "SQL", "Haskell"],
+      "description": "GeoQuest is an AR treasure hunting game for Android mobile devices.\nIt was developed in the context of a university team project assignment.\nUsing image recognition and AR, we developed a game intended to be used in cultural spaces such as museums, art galleries, etc.\nPlayers would take part in predefined quests, following different clues and using their mobile phones to make the stories come to life.",
+      "technologies": ["ReactNative", "ViroReact", "Expo", "Go", "MongoDB", "SQL", "Haskell"],
       "repository": "https://www.github.com/CimimUxMaio/geoquest",
-      "image": "/static/placeholder.png"
-    },
-
-    {
-      "title": "CarpinchoMQ",
-      "description": "Message queue system.",
-      "technologies": ["Elixir", "Horde", "Node.js", "JavaScript"],
-      "repository": "https://www.github.com/CimimUxMaio/carpincho_mq",
       "image": "/static/placeholder.png"
     }
   ]

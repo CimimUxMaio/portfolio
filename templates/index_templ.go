@@ -206,7 +206,7 @@ func console() templ.Component {
 			templ_7745c5c3_Var8 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"console\" class=\"w-4/5 h-4/5 flex flex-col rounded-t-lg rounded-b-2xl shadow-xl shadow-gray-600\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"console\" class=\"w-11/12 h-full flex flex-col rounded-t-lg rounded-b-2xl shadow-xl shadow-gray-600\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -247,7 +247,7 @@ func Index() templ.Component {
 			templ_7745c5c3_Var9 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Portfolio</title><!-- Tailwind Classes --><link rel=\"stylesheet\" href=\"static/tailwind.css\"><!-- Custom JS functions --><script type=\"text/javascript\" src=\"static/functions.js\"></script><script>\n        document.addEventListener(\"DOMContentLoaded\", () => {\n          /* Set console to full window if mobile browser is used */\n          const console = document.getElementById(\"console\");\n          var dimStyles = [\"w-4/5\", \"h-4/5\"];\n\n          if (isMobileBrowser()) {\n            dimStyles = [\"w-full\", \"h-full\"];\n          }\n\n          console.classList.add(...dimStyles);\n        });\n      </script></head><body class=\"w-screen h-screen\" onload=\"appendPrompt(); htmx.trigger(&#39;#default-action&#39;, &#39;click&#39;);\"><div id=\"root\" class=\"h-full flex flex-col justify-center items-center bg-gray-400\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Portfolio</title><!-- Tailwind Classes --><link rel=\"stylesheet\" href=\"static/tailwind.css\"><!-- Custom JS functions --><script type=\"text/javascript\" src=\"static/functions.js\"></script></head><body class=\"w-screen h-screen\" onload=\"appendPrompt(); htmx.trigger(&#39;#default-action&#39;, &#39;click&#39;);\"><div id=\"root\" class=\"h-full flex flex-col justify-center items-center bg-gray-400 p-5\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
