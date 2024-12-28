@@ -1,0 +1,96 @@
+package templates
+
+type actionButtonData struct {
+	label       string
+	command     string
+	customStyle string
+}
+
+templ actionButton(data actionButtonData, isDefault bool) {
+	<div class={ "px-3 py-1 cursor-pointer " + data.customStyle }>
+		<div
+			hx-get={ "/html/commands/" + data.command }
+			hx-target="#command"
+			hx-swap="outerHTML"
+			if isDefault {
+				id="default-action"
+			}
+		>
+			{ data.label }
+		</div>
+	</div>
+}
+
+templ actionBar() {
+	{{
+	actions := []actionButtonData{
+		{"About Me", "whoami", "rounded-tl-lg hover:bg-gray-300"},
+		{"My Work", "mywork", "hover:bg-gray-300"},
+		{"Contact", "contact", "hover:bg-gray-300"},
+	}
+
+	clearAction := actionButtonData{
+		"Clear",
+		"clear",
+		"bg-red-600 hover:bg-red-700 text-white rounded-tr-lg",
+	}
+	}}
+	<div id="navigation" class="flex justify-between bg-gray-200 rounded-t-lg">
+		<div id="actions" class="flex justify-start text-gray-800">
+			for i, action := range actions {
+				@actionButton(action, i == 0)
+			}
+		</div>
+		<div>
+			@actionButton(clearAction, false)
+		</div>
+	</div>
+}
+
+templ content() {
+	<div id="content-window" class="flex-1 bg-gray-800 rounded-b-2xl overflow-y-auto">
+		<div id="content" class="p-8 text-gray-300 flex flex-col gap-5 opacity-80"></div>
+	</div>
+}
+
+templ console() {
+	<div id="console" class="w-4/5 h-4/5 flex flex-col rounded-t-lg rounded-b-2xl shadow-xl shadow-gray-600">
+		@actionBar()
+		@content()
+	</div>
+}
+
+templ Index() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>Portfolio</title>
+			<!-- Tailwind Classes -->
+			<link rel="stylesheet" href="static/tailwind.css"/>
+			<!-- Custom JS functions -->
+			<script type="text/javascript" src="static/functions.js"></script>
+			<script>
+        document.addEventListener("DOMContentLoaded", () => {
+          /* Set console to full window if mobile browser is used */
+          const console = document.getElementById("console");
+          var dimStyles = ["w-4/5", "h-4/5"];
+
+          if (isMobileBrowser()) {
+            dimStyles = ["w-full", "h-full"];
+          }
+
+          console.classList.add(...dimStyles);
+        });
+      </script>
+		</head>
+		<body class="w-screen h-screen" onload="appendPrompt(); htmx.trigger('#default-action', 'click');">
+			<div id="root" class="h-full flex flex-col justify-center items-center bg-gray-400">
+				@console()
+			</div>
+			<!-- HTMX -->
+			<script src="/static/htmx.min.js"></script>
+		</body>
+	</html>
+}

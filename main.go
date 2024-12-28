@@ -1,13 +1,11 @@
 package main
 
 import (
-	"encoding/json"
-	"errors"
-	"log"
 	"net/http"
-	"os"
-	"text/template"
 
+	"github.com/CimimUxMaio/portfolio/model"
+	"github.com/CimimUxMaio/portfolio/templates"
+	"github.com/a-h/templ"
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,16 +17,24 @@ func main() {
 	r.Static("/static", "./static")
 	r.StaticFile("/favicon.ico", "./static/favicon.ico")
 
-	r.SetFuncMap(customFuncMap()) // Setup custom function for templates
+	// r.LoadHTMLGlob("templates/*.html")
 
-	r.LoadHTMLGlob("templates/*.html")
-
-	r.GET("/", withPortfolioData("index.html"))
+	r.GET("/", func(c *gin.Context) {
+		renderComponent(c, templates.Index())
+	})
 
 	info := r.Group("/html/info")
-	info.GET("/whoami", withPortfolioData("whoami.html"))
-	info.GET("/mywork", withPortfolioData("mywork.html"))
-	info.GET("/contact", withPortfolioData("contact.html"))
+	info.GET("/whoami", withPortfolio(func(c *gin.Context, portfolio model.Portfolio) {
+		renderComponent(c, templates.WhoAmI(portfolio.Profile))
+	}))
+
+	info.GET("/mywork", withPortfolio(func(c *gin.Context, portfolio model.Portfolio) {
+		renderComponent(c, templates.MyWork(portfolio.Projects))
+	}))
+
+	info.GET("/contact", withPortfolio(func(c *gin.Context, portfolio model.Portfolio) {
+		renderComponent(c, templates.Contact(portfolio.Contact))
+	}))
 
 	commands := r.Group("/html/commands")
 	commands.GET("/whoami", command("whoami", "/html/info/whoami", ""))
@@ -43,60 +49,32 @@ func main() {
 	}
 }
 
-func getPortfolioData() gin.H {
-	b, err := os.ReadFile("data.json")
-	if err != nil {
-		log.Fatalf("Failed to read data.json:\n %v\n", err)
-	}
-
-	data := map[string]any{}
-	err = json.Unmarshal(b, &data)
-	if err != nil {
-		log.Fatalf("Failed to read data.json:\n %v\n", err)
-	}
-
-	return gin.H(data)
-}
-
-func withPortfolioData(template string) gin.HandlerFunc {
+func withPortfolio(handler func(*gin.Context, model.Portfolio)) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		data := getPortfolioData()
-		c.HTML(http.StatusOK, template, gin.H(data))
+		portfolio, err := model.LoadPortfolio()
+		if err != nil {
+			c.Status(http.StatusInternalServerError)
+			return
+		}
+		handler(c, portfolio)
 	}
 }
 
-func command(command string, infoUrl string, onExec string) gin.HandlerFunc {
+func renderComponent(ctx *gin.Context, component templ.Component) {
+	ctx.Status(http.StatusOK)
+	err := component.Render(ctx.Request.Context(), ctx.Writer)
+	if err != nil {
+		ctx.Status(http.StatusInternalServerError)
+	}
+}
+
+func command(text string, requestUrl string, afterRequest string) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.HTML(http.StatusOK, "command.html", commandInfo(command, infoUrl, onExec))
-	}
-}
-
-func commandInfo(command string, infoUrl string, onExec string) gin.H {
-	typingSteps := len(command)
-	var charPerSec float32 = 12
-	typingDur := float32(typingSteps) / charPerSec
-	return gin.H{"command": command, "typingDur": typingDur, "typingSteps": typingSteps, "infoUrl": infoUrl, "onExec": onExec}
-}
-
-func customFuncMap() template.FuncMap {
-	return template.FuncMap{
-		"dict": func(values ...any) (map[string]any, error) {
-			if len(values)%2 != 0 {
-				return nil, errors.New("Invalid dict call")
-			}
-
-			dict := make(map[string]any, len(values)/2)
-
-			for i := 0; i < len(values); i += 2 {
-				key, ok := values[i].(string)
-				if !ok {
-					return nil, errors.New("Dict keys must be strings")
-				}
-
-				dict[key] = values[i+1]
-			}
-
-			return dict, nil
-		},
+		commandInfo := templates.CommandInfo{
+			Text:         text,
+			RequestUrl:   requestUrl,
+			AfterRequest: afterRequest,
+		}
+		renderComponent(c, templates.Command(commandInfo))
 	}
 }

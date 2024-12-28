@@ -1,40 +1,44 @@
 {
-  "linkedInUrl": "https://www.linkedin.com/in/jbabdon",
-  "gitHubUrl": "https://www.github.com/CimimUxMaio",
-  "email": "juanbiabdon@gmail.com",
+  "contact": {
+    "linkedIn": "https://www.linkedin.com/in/jbabdon",
+    "gitHub": "https://www.github.com/CimimUxMaio",
+    "email": "juanbiabdon@gmail.com"
+  },
 
-  "profilePic": "/static/profile.jpg",
+  "profile": {
+    "picture": "/static/profile.jpg"
+  },
 
   "projects": [
     {
       "title": "Bebot",
-      "summary": "Discord bot that plays music.",
+      "description": "Discord bot that plays music.",
       "technologies": ["Python", "Discord.py", "Asyncio"],
-      "repo": "https://www.github.com/CimimUxMaio/bebot2.0",
+      "repository": "https://www.github.com/CimimUxMaio/bebot2.0",
       "image": "/static/placeholder.png"
     },
 
     {
       "title": "Portfolio",
-      "summary": "This website.",
+      "description": "This website.",
       "technologies": ["Go", "Gin", "Tailwindcss", "HTML", "HTMX"],
-      "repo": "https://www.github.com/CimimUxMaio/portfolio",
+      "repository": "https://www.github.com/CimimUxMaio/portfolio",
       "image": "/static/placeholder.png"
     },
 
     {
       "title": "GeoQuest",
-      "summary": "AI treasure hunting game.",
+      "description": "AI treasure hunting game.",
       "technologies": ["ReactNative", "Expo", "Go", "MongoDB", "SQL", "Haskell"],
-      "repo": "https://www.github.com/CimimUxMaio/geoquest",
+      "repository": "https://www.github.com/CimimUxMaio/geoquest",
       "image": "/static/placeholder.png"
     },
 
     {
       "title": "CarpinchoMQ",
-      "summary": "Message queue system.",
+      "description": "Message queue system.",
       "technologies": ["Elixir", "Horde", "Node.js", "JavaScript"],
-      "repo": "https://www.github.com/CimimUxMaio/carpincho_mq",
+      "repository": "https://www.github.com/CimimUxMaio/carpincho_mq",
       "image": "/static/placeholder.png"
     }
   ]

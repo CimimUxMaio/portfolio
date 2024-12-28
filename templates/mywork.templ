@@ -1,0 +1,40 @@
+package templates
+
+import "github.com/CimimUxMaio/portfolio/model"
+
+templ project(p model.Project) {
+	<div class="flex justify-between gap-4">
+		<div class="flex-1 flex flex-col justify-between gap-4">
+			<div class="flex flex-col gap-2">
+				<h3 class="font-bold text-2xl">{ p.Title }</h3>
+				<div>{ p.Description }</div>
+			</div>
+			<div class="flex flex-col gap-4">
+				<div class="flex gap-4">
+					for _, tech := range p.Technologies {
+						<div class="p-2 border border-sky-300 rounded-md text-sky-300">
+							{ tech }
+						</div>
+					}
+				</div>
+				<div class="italic">
+					Source:
+					<a href={ templ.URL(p.Repository) } target="_blank" class="text-sky-300">
+						{ p.Repository }
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="flex-1">
+			<img class="object-cover rounded-xl max-h-96" src={ p.Image }/>
+		</div>
+	</div>
+}
+
+templ MyWork(projects []model.Project) {
+	<div class="flex flex-col gap-5">
+		for _, p := range projects {
+			@project(p)
+		}
+	</div>
+}

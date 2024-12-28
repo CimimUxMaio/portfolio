@@ -1,0 +1,35 @@
+package templates
+
+type CommandInfo struct {
+	Text         string
+	RequestUrl   string
+	AfterRequest string
+}
+
+script onAnimationEnd(afterRequest string) {
+	document.getElementById("cursor").remove();
+	setTimeout(() => { 
+    eval(afterRequest) 
+  }, 700);
+}
+
+templ Command(command CommandInfo) {
+	{{
+	animation := "animate-type-sm"
+	if len(command.Text) > 6 {
+		animation = "animate-type-lg"
+	}
+	}}
+	<div
+		if command.RequestUrl != "" {
+			hx-get={ string(templ.URL(command.RequestUrl)) }
+			hx-trigger="animationend"
+			hx-target="#info"
+			hx-swap="innerHTML swap:0.5s"
+		}
+		hx-on:animationend={ onAnimationEnd(command.AfterRequest) }
+		class={ "overflow-hidden whitespace-nowrap " + animation }
+	>
+		{ command.Text }
+	</div>
+}

@@ -1,0 +1,13 @@
+package templates
+
+import "github.com/CimimUxMaio/portfolio/model"
+
+templ Contact(contact model.Contact) {
+	<pre>
+		{ "{\n" }
+		"LinkedIn:" <a class="text-sky-300" target="_blank" href={ templ.URL(contact.LinkedIn) }>"{ contact.LinkedIn }"</a>,{ "\n" }
+		"GitHub:"   <a class="text-sky-300" target="_blank" href={ templ.URL(contact.GitHub) }>"{ contact.GitHub }"</a>,{ "\n" }
+		"Email:"    <a class="text-sky-300" target="_blank" href={ templ.URL("mailto:" + contact.Email) }>"{ contact.Email }"</a>
+		{ "\n}" }
+	</pre>
+}

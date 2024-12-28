@@ -7,7 +7,7 @@ function createPrompt() {
       <div class="font-bold text-yellow-400 mr-3 text-nowrap">juan@portfolio:~ $</div>
       <div class="w-fit flex justify-start items-center">
         <div id="command"></div>
-        <div id="cursor"></div>
+        <div id="cursor" class="bg-[#f8f8f2] w-2 h-4 animate-blink"></div>
       </div>
     </div>
 
