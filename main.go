@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/CimimUxMaio/portfolio/model"
@@ -34,14 +35,39 @@ func main() {
 		renderComponent(c, templates.Contact(portfolio.Contact))
 	}))
 
+	info.GET("/projects/:title", withPortfolio(func(c *gin.Context, portfolio model.Portfolio) {
+		title := c.Param("title")
+
+		var targetProject *model.Project = nil
+		for _, project := range portfolio.Projects {
+			fmt.Println("Comparing projects: ", project.Title, title)
+			if project.Title == title {
+				targetProject = &project
+				fmt.Println("Found project: ", project.Title)
+				break
+			}
+		}
+
+		if targetProject == nil {
+			c.Status(http.StatusNotFound)
+			return
+		}
+
+		renderComponent(c, templates.Project(*targetProject))
+	}))
+
 	commands := r.Group("/html/commands")
 	commands.GET("/whoami", command("whoami", "/html/info/whoami", ""))
 	commands.GET("/mywork", command("cat ./projects/summary.md ", "/html/info/mywork", ""))
 	commands.GET("/contact", command("cat contact_info.json", "/html/info/contact", ""))
+	commands.GET("/projects/:title", func(c *gin.Context) {
+		title := c.Param("title")
+		command("cat ./projects/"+title+"/README.md", "/html/info/projects/"+title, "")(c)
+	})
 
 	commands.GET("/clear", command("clear", "", "clearContent();"))
 
-	error := r.Run("192.168.0.38:8001")
+	error := r.Run()
 	if error != nil {
 		panic(error)
 	}

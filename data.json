@@ -20,7 +20,7 @@
 
     {
       "title": "Portfolio",
-      "description": "This website.\nIt is a simple and clean portfolio to showcase my projects.\nFor its development, I use Go together with the Gin framework for the backend, Tailwind CSS for the styling, HTMX for loading dynamic content, and Templ as the templating language.",
+      "description": "This website.\nIt is a simple and clean portfolio to showcase my projects.\nFor its development, I used Go together with the Gin framework for the backend, Tailwind CSS for the styling, HTMX for loading dynamic content, and Templ as the templating language.",
       "technologies": ["Go", "Gin", "TailwindCSS", "HTMX", "Templ"],
       "repository": "https://www.github.com/CimimUxMaio/portfolio",
       "image": "/static/placeholder.png"
@@ -28,7 +28,7 @@
 
     {
       "title": "GeoQuest",
-      "description": "GeoQuest is an AR treasure hunting game for Android mobile devices.\nIt was developed in the context of a university team project assignment.\nUsing image recognition and AR, we developed a game intended to be used in cultural spaces such as museums, art galleries, etc.\nPlayers would take part in predefined quests, following different clues and using their mobile phones to make the stories come to life.",
+      "description": "GeoQuest is an AR treasure hunting game for Android devices.\nIt was developed in the context of an university team assignment.\nUsing image recognition and AR, we developed a game intended to be used in cultural spaces such as museums, art galleries, etc.\nPlayers would take part in predefined quests, following different clues and using their mobile phones to make the stories come to life.",
       "technologies": ["ReactNative", "ViroReact", "Expo", "Go", "MongoDB", "SQL", "Haskell"],
       "repository": "https://www.github.com/CimimUxMaio/geoquest",
       "image": "/static/placeholder.png"

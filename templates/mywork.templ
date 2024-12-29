@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-templ project(p model.Project) {
+templ Project(p model.Project) {
 	<div class="flex justify-between gap-4">
 		<div class="flex-1 flex flex-col justify-between gap-4">
 			<div class="flex flex-col gap-2">
@@ -36,10 +36,30 @@ templ project(p model.Project) {
 	</div>
 }
 
+templ projectCard(p model.Project) {
+	<div
+		hx-get={ "/html/commands/projects/" + p.Title }
+		hx-target="#command"
+		hx-swap="outerHTML"
+		class="cursor-pointer w-72 h-48 bg-gray-600 hover:opacity-50 flex justify-center flex-col items-center rounded-lg text-white gap-2"
+	>
+		<h3 class="font-bold">{ p.Title }</h3>
+		<div class="flex justify-center items-center flex-wrap gap-2">
+			for _, tech := range p.Technologies {
+				<div class="italic">{ tech }</div>
+			}
+		</div>
+	</div>
+}
+
 templ MyWork(projects []model.Project) {
-	<div class="flex flex-col gap-5">
-		for _, p := range projects {
-			@project(p)
-		}
+	<div class="overflow-hidden ">
+		<div class="overflow-x-auto whitespace-nowrap flex items-center gap-2">
+			for _, p := range projects {
+				<div class="inline-block">
+					@projectCard(p)
+				</div>
+			}
+		</div>
 	</div>
 }
