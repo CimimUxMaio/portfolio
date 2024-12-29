@@ -26,9 +26,9 @@ templ Command(command CommandInfo) {
 			hx-trigger="animationend"
 			hx-target="#info"
 			hx-swap="innerHTML swap:0.5s"
-			hx-on::load="document.getElementById('info').scrollIntoView({ behavior: 'smooth' })"
 		}
 		hx-on:animationend={ onAnimationEnd(command.AfterRequest) }
+		hx-on::load="document.getElementById('info').scrollIntoView({ behavior: 'smooth' })"
 		class={ "overflow-hidden whitespace-nowrap " + animation }
 	>
 		{ command.Text }

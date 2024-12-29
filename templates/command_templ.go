@@ -80,7 +80,7 @@ func Command(command CommandInfo) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" hx-trigger=\"animationend\" hx-target=\"#info\" hx-swap=\"innerHTML swap:0.5s\" hx-on::load=\"document.getElementById(&#39;info&#39;).scrollIntoView({ behavior: &#39;smooth&#39; })\"")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" hx-trigger=\"animationend\" hx-target=\"#info\" hx-swap=\"innerHTML swap:0.5s\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -94,7 +94,7 @@ func Command(command CommandInfo) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" class=\"")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" hx-on::load=\"document.getElementById(&#39;info&#39;).scrollIntoView({ behavior: &#39;smooth&#39; })\" class=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
