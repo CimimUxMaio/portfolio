@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/CimimUxMaio/portfolio/model"
@@ -40,10 +39,8 @@ func main() {
 
 		var targetProject *model.Project = nil
 		for _, project := range portfolio.Projects {
-			fmt.Println("Comparing projects: ", project.Title, title)
 			if project.Title == title {
 				targetProject = &project
-				fmt.Println("Found project: ", project.Title)
 				break
 			}
 		}

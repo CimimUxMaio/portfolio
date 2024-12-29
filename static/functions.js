@@ -11,7 +11,7 @@ function createPrompt() {
       </div>
     </div>
 
-    <div id="info" hx-on::after-swap="this.removeAttribute('id'); appendPrompt();"></div>
+    <div id="info"></div>
   `;
 
   const doc = new DOMParser().parseFromString(html, "text/html");
