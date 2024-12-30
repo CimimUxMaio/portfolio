@@ -23,7 +23,7 @@
       "description": "This website.\nIt is a simple and clean portfolio to showcase my projects.\nFor its development, I used Go together with the Gin framework for the backend, Tailwind CSS for the styling, HTMX for loading dynamic content, and Templ as the templating language.",
       "technologies": ["Go", "Gin", "TailwindCSS", "HTMX", "Templ"],
       "repository": "https://www.github.com/CimimUxMaio/portfolio",
-      "image": "/static/placeholder.png"
+      "image": "/static/portfolio.png"
     },
 
     {
