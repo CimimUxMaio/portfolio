@@ -27,6 +27,14 @@
     },
 
     {
+      "title": "CarpinchoMQ",
+      "description": "CarpinchoMQ was a team project for the course 'Implementation of Concurrent Software Architectures.'\nIt is a distributed message broker developed in Elixir using the Horde library.\nThe project also included a small JavaScript library that could be used as a client to connect to the network as well as a small front-end administration application, developed with React.",
+      "technologies": ["Elixir", "Horde", "React", "JavaScript"],
+      "repository": "https://github.com/TP-IASC",
+      "image": "/static/carpinchomq.jpg"
+    },
+
+    {
       "title": "GeoQuest",
       "description": "GeoQuest is an AR treasure hunting game for Android devices.\nIt was developed in the context of an university team assignment.\nUsing image recognition and AR, we developed a game intended to be used in cultural spaces such as museums, art galleries, etc.\nPlayers would take part in predefined quests, following different clues and using their mobile phones to make the stories come to life.\nThe projet also includes another app used to validate discount coupons obtained after each quest.",
       "technologies": ["ReactNative", "ViroReact", "Expo", "Go", "MongoDB", "SQL", "Haskell"],
