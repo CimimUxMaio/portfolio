@@ -2,7 +2,7 @@
 
 set -e  # Exit on error
 
-rm *.pem
+rm -f *.pem
 echo "Removed all existing .pem files."
 
 echo "Generating CA's private key and self-signed certificate..."
