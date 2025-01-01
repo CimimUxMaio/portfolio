@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e  # Exit on error
+
 rm *.pem
 echo "Removed all existing .pem files."
 
