@@ -1,11 +1,7 @@
-FROM alpine:3.21
+FROM golang:1.23.4-alpine
 
 # Update and upgrade
 RUN apk update && apk upgrade
-
-# Install dependencies:
-# - Golang
-RUN apk add --no-cache go
 
 # Copy project files
 COPY . /app

@@ -1,0 +1,11 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    build:
+      dockerfile: nginx.Dockerfile
+
+  backend:
+    build: .
