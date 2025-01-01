@@ -1,0 +1,3 @@
+/tls/*
+!/tls/server-cert.pem
+!/tls/server-key.pem
