@@ -64,7 +64,7 @@ func main() {
 
 	commands.GET("/clear", command("clear", "", "clearContent();"))
 
-	error := r.Run()
+	error := r.RunTLS(":8080", "./tls/server-cert.pem", "./tls/server-key.pem")
 	if error != nil {
 		panic(error)
 	}
