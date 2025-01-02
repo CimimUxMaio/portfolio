@@ -1,11 +1,27 @@
 services:
   nginx:
     image: nginx:alpine
+
     ports:
       - "80:80"
       - "443:443"
+
     build:
       dockerfile: nginx.Dockerfile
 
+    volumes:
+      - ./ssl/:/etc/letsencrypt/
+
+    depends_on:
+      - cert-renewer
+
   backend:
     build: .
+
+  cert-renewer:
+    image: certbot/certbot
+
+    volumes:
+      - ./ssl/:/etc/letsencrypt/
+
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 7d & wait $${!}; done;'"
