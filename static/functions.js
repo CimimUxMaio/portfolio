@@ -31,7 +31,11 @@ function appendPrompt() {
   const prompt = createPrompt();
   const promptText = prompt.firstElementChild;
   content.appendChild(prompt);
-  promptText.scrollIntoView({ behavior: "smooth" });
+
+  setTimeout(() => {
+    // Wait for the DOM is updated, then scroll into view
+    promptText.scrollIntoView({ behavior: "smooth" });
+  }, 200);
 }
 
 function clearContent() {
