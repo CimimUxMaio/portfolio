@@ -38,7 +38,7 @@ templ actionBar() {
 	}
 	}}
 	<div id="navigation" class="flex justify-between bg-gray-200 rounded-t-lg">
-		<div id="actions" class="flex justify-start text-gray-800 gap-1">
+		<div id="actions" class="flex justify-start text-gray-800">
 			for i, action := range actions {
 				@actionButton(action, i == 0)
 			}

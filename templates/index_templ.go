@@ -132,7 +132,7 @@ func actionBar() templ.Component {
 			"clear",
 			"bg-red-600 hover:bg-red-700 text-white rounded-tr-lg",
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"navigation\" class=\"flex justify-between bg-gray-200 rounded-t-lg\"><div id=\"actions\" class=\"flex justify-start text-gray-800 gap-1\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"navigation\" class=\"flex justify-between bg-gray-200 rounded-t-lg\"><div id=\"actions\" class=\"flex justify-start text-gray-800\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
