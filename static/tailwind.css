@@ -562,6 +562,10 @@ video {
   margin-right: 0.75rem;
 }
 
+.box-border {
+  box-sizing: border-box;
+}
+
 .block {
   display: block;
 }
@@ -621,6 +625,20 @@ video {
 
 .flex-1 {
   flex: 1 1 0%;
+}
+
+@keyframes alertBg {
+  0%, 100% {
+    background-color: #e5e7eb;
+  }
+
+  50% {
+    background-color: #fdba74;
+  }
+}
+
+.animate-alert-bg {
+  animation: alertBg 1.5s 3;
 }
 
 @keyframes blink {

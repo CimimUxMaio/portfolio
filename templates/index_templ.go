@@ -37,7 +37,7 @@ func actionButton(data actionButtonData, isDefault bool) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var2 = []any{"px-3 py-1 cursor-pointer " + data.customStyle}
+		var templ_7745c5c3_Var2 = []any{"px-2 py-1 cursor-pointer " + data.customStyle}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -122,9 +122,9 @@ func actionBar() templ.Component {
 		ctx = templ.ClearChildren(ctx)
 
 		actions := []actionButtonData{
-			{"About Me", "whoami", "rounded-tl-lg hover:bg-gray-300"},
-			{"My Work", "mywork", "hover:bg-gray-300"},
-			{"Contact", "contact", "hover:bg-gray-300"},
+			{"About Me", "whoami", "rounded-tl-lg hover:bg-gray-300 animate-alert-bg"},
+			{"My Work", "mywork", "hover:bg-gray-300 animate-alert-bg"},
+			{"Contact", "contact", "hover:bg-gray-300 animate-alert-bg"},
 		}
 
 		clearAction := actionButtonData{
@@ -132,7 +132,7 @@ func actionBar() templ.Component {
 			"clear",
 			"bg-red-600 hover:bg-red-700 text-white rounded-tr-lg",
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"navigation\" class=\"flex justify-between bg-gray-200 rounded-t-lg\"><div id=\"actions\" class=\"flex justify-start text-gray-800\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"navigation\" class=\"flex justify-between bg-gray-200 rounded-t-lg\"><div id=\"actions\" class=\"flex justify-start text-gray-800 gap-1\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

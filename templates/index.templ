@@ -9,7 +9,7 @@ type actionButtonData struct {
 }
 
 templ actionButton(data actionButtonData, isDefault bool) {
-	<div class={ "px-3 py-1 cursor-pointer " + data.customStyle }>
+	<div class={ "px-2 py-1 cursor-pointer " + data.customStyle }>
 		<div
 			hx-get={ "/html/commands/" + data.command }
 			hx-target="#command"
@@ -26,9 +26,9 @@ templ actionButton(data actionButtonData, isDefault bool) {
 templ actionBar() {
 	{{
 	actions := []actionButtonData{
-		{"About Me", "whoami", "rounded-tl-lg hover:bg-gray-300"},
-		{"My Work", "mywork", "hover:bg-gray-300"},
-		{"Contact", "contact", "hover:bg-gray-300"},
+		{"About Me", "whoami", "rounded-tl-lg hover:bg-gray-300 animate-alert-bg"},
+		{"My Work", "mywork", "hover:bg-gray-300 animate-alert-bg"},
+		{"Contact", "contact", "hover:bg-gray-300 animate-alert-bg"},
 	}
 
 	clearAction := actionButtonData{
@@ -38,7 +38,7 @@ templ actionBar() {
 	}
 	}}
 	<div id="navigation" class="flex justify-between bg-gray-200 rounded-t-lg">
-		<div id="actions" class="flex justify-start text-gray-800">
+		<div id="actions" class="flex justify-start text-gray-800 gap-1">
 			for i, action := range actions {
 				@actionButton(action, i == 0)
 			}
