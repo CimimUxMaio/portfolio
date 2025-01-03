@@ -36,7 +36,7 @@ templ picture(url string) {
 }
 
 templ WhoAmI(profile model.Profile) {
-	<div class="flex justify-between gap-4">
+	<div class="flex justify-between items-center gap-4">
 		@summary()
 		<div class="flex-1 flex justify-center items-center">
 			@picture(profile.Picture)
