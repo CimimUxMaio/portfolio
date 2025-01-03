@@ -121,10 +121,11 @@ func actionBar() templ.Component {
 		}
 		ctx = templ.ClearChildren(ctx)
 
+		baseStyles := "hover:bg-gray-300 animate-alert-bg"
 		actions := []actionButtonData{
-			{"About Me", "whoami", "rounded-tl-lg hover:bg-gray-300 animate-alert-bg"},
-			{"My Work", "mywork", "hover:bg-gray-300 animate-alert-bg"},
-			{"Contact", "contact", "hover:bg-gray-300 animate-alert-bg"},
+			{"About Me", "whoami", "rounded-tl-lg " + baseStyles},
+			{"My Work", "mywork", baseStyles},
+			{"Contact", "contact", baseStyles},
 		}
 
 		clearAction := actionButtonData{
