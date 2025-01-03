@@ -9,7 +9,7 @@ type actionButtonData struct {
 }
 
 templ actionButton(data actionButtonData, isDefault bool) {
-	<div class={ "px-2 py-1 cursor-pointer " + data.customStyle }>
+	<div class={ "px-3 py-1 cursor-pointer " + data.customStyle }>
 		<div
 			hx-get={ "/html/commands/" + data.command }
 			hx-target="#command"

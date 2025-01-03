@@ -37,7 +37,7 @@ func actionButton(data actionButtonData, isDefault bool) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var2 = []any{"px-2 py-1 cursor-pointer " + data.customStyle}
+		var templ_7745c5c3_Var2 = []any{"px-3 py-1 cursor-pointer " + data.customStyle}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
