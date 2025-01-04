@@ -634,7 +634,7 @@ video {
 }
 
 .animate-alert-bg {
-  animation: alertBg 1.5s 3;
+  animation: alertBg 1s 4 5s;
 }
 
 @keyframes blink {

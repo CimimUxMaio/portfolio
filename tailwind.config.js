@@ -23,7 +23,7 @@ export default {
         blink: "blink 1s infinite",
         "type-sm": "type 0.5s steps(10, end)",
         "type-lg": "type 1.5s steps(30, end)",
-        "alert-bg": "alertBg 1.5s 3",
+        "alert-bg": "alertBg 1s 4 5s",
       }
     }
   },
