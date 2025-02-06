@@ -17,11 +17,12 @@ type Contact struct {
 }
 
 type Project struct {
-	Title        string   `json:"title"`
-	Description  string   `json:"description"`
-	Technologies []string `json:"technologies"`
-	Repository   string   `json:"repository"`
-	Image        string   `json:"image"`
+	Title          string   `json:"title"`
+	Technologies   []string `json:"technologies"`
+	Repository     string   `json:"repository"`
+	Image          string   `json:"image"`
+	About          string   `json:"about"`
+	LessonsLearned string   `json:"lessonsLearned"`
 }
 
 type Portfolio struct {

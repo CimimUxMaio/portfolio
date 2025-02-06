@@ -12,34 +12,38 @@
   "projects": [
     {
       "title": "Bebot",
-      "description": "This is a music-playing bot I use with my friends on Discord.\nThis project has gone through multiple iterations, and I am still frequently updating it and exploring new features.\nIt interacts with Discord's API through the discord.py Python library and uses yt-dlp for searching and downloading audio tracks.",
       "technologies": ["Python", "Discord.py", "Asyncio"],
       "repository": "https://www.github.com/CimimUxMaio/bebot2.0",
-      "image": "/static/bebot.png"
+      "image": "/static/bebot.png",
+      "about": "Bebot is a music-playing bot for Discord. It's project started multiple years ago, and it has gone through multiple iterations thanks to the usage and feedback of my friends, with whom I use it.\nIt is developed in Python, and it is a permanent work in progress. I try to keep it updated and am always open to exploring new features.",
+      "lessonsLearned": "Since I started this project, I've greatly improved and developed my Python skills in general. Particularly, this project helped me understand and gain experience with the Asyncio library to take advantage of concurrency. On the other hand, I also learned about Discord's API and how to interact with it using the discord.py library."
     },
 
     {
       "title": "Portfolio",
-      "description": "This website.\nIt is a simple and clean portfolio to showcase my projects.\nFor its development, I used Go together with the Gin framework for the backend, Tailwind CSS for the styling, HTMX for loading dynamic content, and Templ as the templating language.",
       "technologies": ["Go", "Gin", "TailwindCSS", "HTMX", "Templ"],
       "repository": "https://www.github.com/CimimUxMaio/portfolio",
-      "image": "/static/portfolio.png"
+      "image": "/static/portfolio.png",
+      "about": "I designed this website to showcase a selection of some of the things I've developed. I hope you find it interesting!\nI wanted to keep it simple, so I developed a single HTTP server that serves HTML. But I knew I also needed to be able to load dynamic content and some styles to make it look pretty. So I decided that it was a great idea to give HTMX and TailwindCSS a try.",
+      "lessonsLearned": "With this project I took the time to get more familiarized with multiple technologies such as the Gin framework (for the web server), HTMX (for loading dynamic content), TailwindCSS (for styling), and Templ (for the development of reusable HTML templates)."
     },
 
     {
       "title": "CarpinchoMQ",
-      "description": "CarpinchoMQ was a team project for the course 'Implementation of Concurrent Software Architectures.'\nIt is a distributed message broker developed in Elixir using the Horde library.\nThe project also included a small JavaScript library that could be used as a client to connect to the network as well as a small front-end administration application, developed with React.",
       "technologies": ["Elixir", "Horde", "React", "JavaScript"],
       "repository": "https://github.com/TP-IASC",
-      "image": "/static/carpinchomq.jpg"
+      "image": "/static/carpinchomq.jpg",
+      "about": "CarpinchoMQ was a team project for the course 'Implementation of Concurrent Architectures' at university. I is a distributed message broker developed in Elixir. We also developed a small JavaScript library to interact with the network and a simple front-end application using React for its administration.",
+      "lessonsLearned": "This project was aimed at learning about Elixir's capabilities for developing distributed systems. With the help of the Horde library, we developed a message broker that works as a P2P network and learned about the difficulties found in this type of systems and how to overcome them.\nThis project also led me to produce my very first contribution to an open-source project on the Horde library, improving the design of one of its components: <a href='https://github.com/derekkraan/horde/pull/239' target='_blank' class='text-sky-300'>https://github.com/derekkraan/horde/pull/239</a>."
     },
 
     {
       "title": "GeoQuest",
-      "description": "GeoQuest is an AR treasure hunting game for Android devices.\nIt was developed in the context of an university team assignment.\nUsing image recognition and AR, we developed a game intended to be used in cultural spaces such as museums, art galleries, etc.\nPlayers would take part in predefined quests, following different clues and using their mobile phones to make the stories come to life.\nThe projet also includes another app used to validate discount coupons obtained after each quest.",
       "technologies": ["ReactNative", "ViroReact", "Expo", "Go", "MongoDB", "SQL", "Haskell"],
       "repository": "https://www.github.com/proyecto-final-2022",
-      "image": "/static/geoquest.gif"
+      "image": "/static/geoquest.gif",
+      "about": "GeoQuest is an AR treasure hunting game developed in the context of a university team assignment. Players would take part in predefined quests, following different clues and using their mobile phones to make objects come to life.\nThe project was intended to be used in spaces such as museums and art galleries with the objective of giving people a more vivid experience and to have fun on their visit. It also included the development of another small application used for scanning and validating coupons (QR codes) gained through the game intended to grant players discounts within the given establishment.",
+      "lessonsLearned": "This app was the first big and complex React Native application I've developed. We learned a lot about how AR can be used in creative ways, and even though we were successful with our task, we also learned about the importance of choosing our technologies and scope more wisely. For its development, we used ViroReact, an AR library designed to be used with React Native. Although simple at first, we relied too much on it, this, combined with our lack of experience and knowledge of it, led us to multiple problems that dalayed us. Luckily, in the end, and thanks to the help of the ViroReact community, we managed to make a good enough MVP."
     }
   ]
 }

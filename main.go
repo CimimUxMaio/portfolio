@@ -55,11 +55,11 @@ func main() {
 
 	commands := r.Group("/html/commands")
 	commands.GET("/whoami", command("whoami", "/html/info/whoami", ""))
-	commands.GET("/mywork", command("cat ./projects/summary.md ", "/html/info/mywork", ""))
-	commands.GET("/contact", command("cat contact_info.json", "/html/info/contact", ""))
+	commands.GET("/mywork", command("ls ~/projects/ ", "/html/info/mywork", ""))
+	commands.GET("/contact", command("cat /usr/contact-info.json", "/html/info/contact", ""))
 	commands.GET("/projects/:title", func(c *gin.Context) {
 		title := c.Param("title")
-		command("cat ./projects/"+title+"/README.md", "/html/info/projects/"+title, "")(c)
+		command("cat ~/projects/"+title+"/README.md", "/html/info/projects/"+title, "")(c)
 	})
 
 	commands.GET("/clear", command("clear", "", "clearContent();"))
