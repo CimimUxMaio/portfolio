@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/CimimUxMaio/portfolio/model"
@@ -74,6 +75,7 @@ func withPortfolio(handler func(*gin.Context, model.Portfolio)) gin.HandlerFunc 
 	return func(c *gin.Context) {
 		portfolio, err := model.LoadPortfolio()
 		if err != nil {
+			log.Println(err)
 			c.Status(http.StatusInternalServerError)
 			return
 		}
@@ -85,6 +87,7 @@ func renderComponent(ctx *gin.Context, component templ.Component) {
 	ctx.Status(http.StatusOK)
 	err := component.Render(ctx.Request.Context(), ctx.Writer)
 	if err != nil {
+		log.Println(err)
 		ctx.Status(http.StatusInternalServerError)
 	}
 }

@@ -16,7 +16,7 @@ templ Project(p model.Project) {
 						@templ.Raw(line)
 					</p>
 				}
-				<b>What I've leared:</b>
+				<b>What I've learned:</b>
 				for _, line := range strings.Split(p.LessonsLearned, "\n") {
 					<p>
 						@templ.Raw(line)

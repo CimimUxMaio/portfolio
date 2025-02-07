@@ -15,35 +15,32 @@
       "technologies": ["Python", "Discord.py", "Asyncio"],
       "repository": "https://www.github.com/CimimUxMaio/bebot2.0",
       "image": "/static/bebot.png",
-      "about": "Bebot is a music-playing bot for Discord. It's project started multiple years ago, and it has gone through multiple iterations thanks to the usage and feedback of my friends, with whom I use it.\nIt is developed in Python, and it is a permanent work in progress. I try to keep it updated and am always open to exploring new features.",
-      "lessonsLearned": "Since I started this project, I've greatly improved and developed my Python skills in general. Particularly, this project helped me understand and gain experience with the Asyncio library to take advantage of concurrency. On the other hand, I also learned about Discord's API and how to interact with it using the discord.py library."
+      "about": "<b>Bebot</b> is a <b>Discord music bot</b> that started as a personal project for my friends and me. Over the years, it has evolved through feedback and new ideas, making it a <b>constant work in progress</b> that I actively improve.",
+      "lessonsLearned": "Through Bebot, I’ve <b>sharpened my Python skills</b> and gained hands-on experience with <b>async programming</b> using <b>Asyncio</b>. I also learned the ins and outs of <b>Discord’s API</b> and how to interact with it using <b>discord.py</b>."
     },
-
     {
       "title": "Portfolio",
       "technologies": ["Go", "Gin", "TailwindCSS", "HTMX", "Templ"],
       "repository": "https://www.github.com/CimimUxMaio/portfolio",
       "image": "/static/portfolio.png",
-      "about": "I designed this website to showcase a selection of some of the things I've developed. I hope you find it interesting!\nI wanted to keep it simple, so I developed a single HTTP server that serves HTML. But I knew I also needed to be able to load dynamic content and some styles to make it look pretty. So I decided that it was a great idea to give HTMX and TailwindCSS a try.",
-      "lessonsLearned": "With this project I took the time to get more familiarized with multiple technologies such as the Gin framework (for the web server), HTMX (for loading dynamic content), TailwindCSS (for styling), and Templ (for the development of reusable HTML templates)."
+      "about": "I built this <b>portfolio website</b> to showcase my work in a <b>clean and simple</b> way. I wanted something <b>lightweight but dynamic</b>, so I used <b>Go for the backend</b>, <b>HTMX for interactivity</b>, and <b>TailwindCSS for styling</b>.",
+      "lessonsLearned": "This project was a great chance to <b>dive deeper into Go</b> and experiment with <b>HTMX for dynamic content</b>, <b>Templ for reusable HTML</b>, and <b>Gin as a web framework</b>. It reinforced my appreciation for <b>efficient, minimalistic web development</b>."
     },
-
     {
       "title": "CarpinchoMQ",
       "technologies": ["Elixir", "Horde", "React", "JavaScript"],
       "repository": "https://github.com/TP-IASC",
       "image": "/static/carpinchomq.jpg",
-      "about": "CarpinchoMQ was a team project for the course 'Implementation of Concurrent Architectures' at university. I is a distributed message broker developed in Elixir. We also developed a small JavaScript library to interact with the network and a simple front-end application using React for its administration.",
-      "lessonsLearned": "This project was aimed at learning about Elixir's capabilities for developing distributed systems. With the help of the Horde library, we developed a message broker that works as a P2P network and learned about the difficulties found in this type of systems and how to overcome them.\nThis project also led me to produce my very first contribution to an open-source project on the Horde library, improving the design of one of its components: <a href='https://github.com/derekkraan/horde/pull/239' target='_blank' class='text-sky-300'>https://github.com/derekkraan/horde/pull/239</a>."
+      "about": "<b>CarpinchoMQ</b> is a <b>distributed message broker</b> built in <b>Elixir</b> as part of a university project on concurrent systems. It uses <b>Horde for distributed process management</b> and includes a <b>React-based UI</b> and a simple <b>JavaScript library</b> for network interaction.",
+      "lessonsLearned": "This project gave me hands-on experience with <b>Elixir’s concurrency model</b> and the challenges of <b>building distributed systems</b>. It also led me to my <b>first open-source contribution</b>, improving the desing of one of Horde's components: <a href='https://github.com/derekkraan/horde/pull/239' target='_blank' class='text-sky-300'><b>Pull Request</b></a>."
     },
-
     {
       "title": "GeoQuest",
-      "technologies": ["ReactNative", "ViroReact", "Expo", "Go", "MongoDB", "SQL", "Haskell"],
+      "technologies": ["ReactNative", "ViroReact", "Go", "MongoDB", "SQL", "Haskell"],
       "repository": "https://www.github.com/proyecto-final-2022",
       "image": "/static/geoquest.gif",
-      "about": "GeoQuest is an AR treasure hunting game developed in the context of a university team assignment. Players would take part in predefined quests, following different clues and using their mobile phones to make objects come to life.\nThe project was intended to be used in spaces such as museums and art galleries with the objective of giving people a more vivid experience and to have fun on their visit. It also included the development of another small application used for scanning and validating coupons (QR codes) gained through the game intended to grant players discounts within the given establishment.",
-      "lessonsLearned": "This app was the first big and complex React Native application I've developed. We learned a lot about how AR can be used in creative ways, and even though we were successful with our task, we also learned about the importance of choosing our technologies and scope more wisely. For its development, we used ViroReact, an AR library designed to be used with React Native. Although simple at first, we relied too much on it, this, combined with our lack of experience and knowledge of it, led us to multiple problems that dalayed us. Luckily, in the end, and thanks to the help of the ViroReact community, we managed to make a good enough MVP."
+      "about": "<b>GeoQuest</b> is an <b>AR treasure hunt game</b> developed as a university team project. Players follow clues using their phones to bring objects to life, making it perfect for <em>museums and galleries</em> looking to enhance visitor experiences. It also included a <b>QR validation app</b> for redeeming in-game rewards.",
+      "lessonsLearned": "This was my first <b>large-scale React Native project</b>, where I explored <b>AR in creative ways</b>. While we achieved our goal, I learned how crucial it is to <b>carefully choose technologies and scope</b>. We relied too much on <b>ViroReact</b>, which led to setbacks, but thanks to <b>community support</b>, we delivered a solid MVP."
     }
   ]
 }
